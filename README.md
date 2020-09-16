@@ -19,8 +19,6 @@ DAG joins the data and runs scoring logic for each line item to create the data
 model. A Data Studio visuzalization layer can go on top of the data to create a
 dashboard.
 
-***ADD SCREENSHOTS***
-
 ## Tech Notes
 
 Composer is a Google Cloud managed version of Apache Airflow, an open source
