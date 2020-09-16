@@ -1,0 +1,26 @@
+{
+	"kind": "doubleclickbidmanager#query",
+	"metadata": {
+		"title": "Advertiser IDs",
+		"dataRange": "LAST_30_DAYS",
+		"format": "CSV",
+		"sendNotification": false
+	},
+	"params": {
+		"type": "TYPE_GENERAL",
+		"groupBys": ["FILTER_ADVERTISER", "FILTER_PARTNER"],
+		 "filters": [
+        {%- for partner in params.partners %}
+            {% if not loop.first %}, {% endif -%}
+            {"type": "FILTER_PARTNER", "value": {{ partner }}}
+        {%- endfor -%}
+        ],
+		"metrics": ["METRIC_IMPRESSIONS"],
+		"includeInviteData": true
+	},
+	"schedule": {
+		"frequency": "ONE_TIME",
+		"endTimeMs": "0"
+	}
+}
+

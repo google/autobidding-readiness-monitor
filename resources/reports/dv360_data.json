@@ -1,0 +1,47 @@
+{
+ "kind": "doubleclickbidmanager#query",
+ "metadata": {
+  "title": "{{ params.title }}",
+  "dataRange": "LAST_30_DAYS",
+  "format": "CSV",
+  "running": true,
+  "reportCount": 0,
+  "googleCloudStoragePathForLatestReport": "",
+  "latestReportRunTimeMs": "0",
+  "googleDrivePathForLatestReport": "",
+  "sendNotification": false
+ },
+ "params": {
+  "type": "TYPE_GENERAL",
+  "groupBys": [
+   "FILTER_DATE",
+   "FILTER_PARTNER",
+   "FILTER_ADVERTISER",
+   "FILTER_LINE_ITEM",
+   "FILTER_INSERTION_ORDER",
+   "FILTER_LINE_ITEM_TYPE",
+   "FILTER_MEDIA_PLAN"
+  ],
+  "filters": [
+   {
+    "type": "FILTER_PARTNER",
+    "value": "{{ params.account_id }}"
+   }
+  ],
+  "metrics": [
+   "METRIC_IMPRESSIONS",
+   "METRIC_CLICKS",
+   "METRIC_TOTAL_CONVERSIONS",
+   "METRIC_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS",
+   "METRIC_ACTIVE_VIEW_AUDIBLE_VISIBLE_ON_COMPLETE_IMPRESSIONS",
+   "METRIC_ACTIVE_VIEW_VIEWABLE_FOR_TIME_THRESHOLD",
+   "METRIC_MEDIA_COST_USD"
+  ],
+  "includeInviteData": true
+ },
+ "schedule": {
+  "frequency": "ONE_TIME",
+  "endTimeMs": "0"
+ }
+}
+
