@@ -4,7 +4,7 @@ WITH spend_agg AS (
     line_item_id,
     sum(media_cost) as media_cost_7_days
   FROM
-    `{{ params.dv_report_dataset }}.dv360_report`
+    `{{ params.dv_report_dataset }}`
   WHERE
    CAST(REPLACE(date, "/", "-") as DATE) <= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)
   GROUP BY line_item_id)
@@ -48,7 +48,7 @@ SELECT
   sum(dv.Active_View_Viewable_10_Seconds) as viewable_10s_imps,
   sum(sa.media_cost_7_days) as media_cost_7_days
 FROM
-  `{{ params.dv_report_dataset }}.dv360_report` dv
+  `{{ params.dv_report_dataset }}` dv
 JOIN
    `{{ params.sdf_report_dataset }}.SDFLineItem` lisdf
 ON dv.line_item_id = CAST(lisdf.Line_item_id AS INT64)
