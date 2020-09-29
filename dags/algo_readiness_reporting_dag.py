@@ -118,8 +118,8 @@ def build(dag_id, default_args, config_path, partner_id):
   partner_id = partner_id
   dag_id = dag_id
   default_args = default_args
-  dv_report_dataset_table = "%s.dv360_report_%s" % dv_bq_dataset, partner_id
-  sdf_dv_join_dataset_table = "%s.sdf_dv360_join_%s" % dv_bq_dataset, partner_id
+  dv_report_dataset_table = "%s.dv360_report_%s" % (dv_bq_dataset, partner_id)
+  sdf_dv_join_dataset_table = "%s.sdf_dv360_join_%s" % (dv_bq_dataset, partner_id)
 
   # Pull advertisers for a partner from the Airflow Variables
   advertisers_per_partner = models.Variable.get('dv360_sdf_advertisers')
