@@ -7,7 +7,7 @@ WITH adv_agg AS (
     SUM(audible_visible_imps) as adv_audible_visible_imps,
     SUM(viewable_10s_imps) as adv_viewable_10s_imps
   FROM
-   `{{ params.report_dataset }}`
+   `{{ params.report_dataset }}.sdf_dv360_join_{{ params.partner_id }}`
   GROUP BY 1)
 
 SELECT
@@ -71,7 +71,7 @@ SELECT
     ELSE "Mismatched"
   END AS match_type,
 sum(media_cost_7_days) as media_cost_past_7_days
-FROM `{{ params.report_dataset }}` as li
+FROM `{{ params.report_dataset }}.sdf_dv360_join_{{ params.partner_id }}` as li
 JOIN adv_agg as adv
 ON
   adv.advertiser_id = li.advertiser_id
