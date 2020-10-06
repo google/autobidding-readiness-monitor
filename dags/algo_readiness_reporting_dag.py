@@ -189,7 +189,6 @@ def build(dag_id, default_args, config_path, partner_id):
       bigquery_conn_id=config["gcp_connection_id"],
       bucket=_xcom_pull(download_report, "destination_bucket"),
       source_objects=[_xcom_pull(download_report, "destination_object")],
-      compression="GZIP",
       destination_project_dataset_table="%s.dv360_report_%s" % (
           dv_bq_dataset, partner_id),
       schema_fields=resource_loader.get_schema("dv360_data.json"),
@@ -374,7 +373,7 @@ def build(dag_id, default_args, config_path, partner_id):
   create_LI_table_task >> create_IO_table_task >> tasks[0] >> tasks[1:]
   start_reporting_workflow \
   >> delete_report \
-  >>create_report \
+  >> create_report \
   >> wait_for_report \
   >> download_report \
   >> load_bq_data

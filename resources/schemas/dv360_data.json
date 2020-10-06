@@ -10,7 +10,7 @@
     "type": "STRING"
   },
   {
-    "mode": "NULLABLE",
+    "mode": "REQUIRED",
     "name": "Partner_ID",
     "type": "INTEGER"
   },
