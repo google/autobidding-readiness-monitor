@@ -19,7 +19,7 @@ DAG joins the data and runs scoring logic for each line item to create the data
 model. A Data Studio visuzalization layer can go on top of the data to create a
 dashboard.
 
-See the [User Guide](https://github.com/google/autobidding-readiness-monitor/blob/master/DV360%20Autobidding%20Readiness%20Monitor%20(ARM)%20User%20Guide.pdf) to see how an end user would use the dashboard.
+See the [User Guide](https://github.com/google/autobidding-readiness-monitor/blob/master/DV360%20ARM%20User%20Guide.pdf) to see how an end user would use the dashboard.
 
 ## Tech Notes
 
@@ -152,4 +152,4 @@ This project is covered by the Apache License.
 
 # User Guide
 
-See the [User Guide](https://github.com/google/autobidding-readiness-monitor/blob/master/DV360%20Autobidding%20Readiness%20Monitor%20(ARM)%20User%20Guide.pdf) to see how an end user would use the dashboard.
+See the [User Guide](https://github.com/google/autobidding-readiness-monitor/blob/master/DV360%20ARM%20User%20Guide.pdf) to see how an end user would use the dashboard.
